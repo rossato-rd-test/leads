@@ -49,6 +49,9 @@ end
 # See https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems.
 gem 'rails_12factor', group: :production
 
+# Salesforce gem - added by Rossato
+gem 'databasedotcom'
+
 # Ruby version 2.2.2 - added by Rossato
 # For Heroku and local (ruby 2.2.2p95 (2015-04-13 revision 50295) [x86_64-darwin14]) environment compatibility
 # See https://devcenter.heroku.com/articles/getting-started-with-rails4#specify-ruby-version-in-app

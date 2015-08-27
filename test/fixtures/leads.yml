@@ -9,7 +9,7 @@ one:
   phone: MyString
   website: MyString
   salesforce_id: MyString
-  salesforce_updated_at: 2015-08-26 23:59:33
+  salesforce_updated_at: 2015-08-27 00:26:25
 
 two:
   name: MyString
@@ -20,4 +20,4 @@ two:
   phone: MyString
   website: MyString
   salesforce_id: MyString
-  salesforce_updated_at: 2015-08-26 23:59:33
+  salesforce_updated_at: 2015-08-27 00:26:25

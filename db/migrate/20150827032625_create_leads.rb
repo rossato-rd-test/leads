@@ -1,10 +1,6 @@
-# Command used to generate
-# `rails generate model lead 
-#   name:string{50}, last_name:string{50}, email:string{100}, 
-#   company:string{100}, job_title:string{100}, phone:string{50}, 
-#   website:string{100}, salesforce_id:string{50}, salesforce_updated_at:timestamp`
-
 class CreateLeads < ActiveRecord::Migration
+  
+  drop_table 'leads' if ActiveRecord::Base.connection.table_exists? 'leads'
   def change
     create_table :leads do |t|
       t.string :name, limit: 50
