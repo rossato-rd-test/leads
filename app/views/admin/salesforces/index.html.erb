@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Admin Salesforces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Client</th>
+      <th>Client secret</th>
+      <th>Security token</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_salesforces.each do |admin_salesforce| %>
+      <tr>
+        <td><%= admin_salesforce.username %></td>
+        <td><%= admin_salesforce.password %></td>
+        <td><%= admin_salesforce.client_id %></td>
+        <td><%= admin_salesforce.client_secret %></td>
+        <td><%= admin_salesforce.security_token %></td>
+        <td><%= link_to 'Show', admin_salesforce %></td>
+        <td><%= link_to 'Edit', edit_admin_salesforce_path(admin_salesforce) %></td>
+        <td><%= link_to 'Destroy', admin_salesforce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Salesforce', new_admin_salesforce_path %>

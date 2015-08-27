@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827032625) do
+ActiveRecord::Schema.define(version: 20150827041120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admin_salesforces", force: :cascade do |t|
+    t.string   "username",       limit: 100
+    t.string   "password",       limit: 100
+    t.string   "client_id",      limit: 200
+    t.string   "client_secret",  limit: 200
+    t.string   "security_token", limit: 200
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "leads", force: :cascade do |t|
     t.string   "name",                  limit: 50
