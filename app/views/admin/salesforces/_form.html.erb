@@ -1,4 +1,4 @@
-<%= form_for(@admin_salesforce) do |f| %>
+<%= form_for(@admin_salesforce, class: "pure-form") do |f| %>
 <% if @admin_salesforce.errors.any? %>
 <div id="error_explanation">
 	<h2><%= pluralize(@admin_salesforce.errors.count, "error") %> prohibited from being saved:</h2>
@@ -39,6 +39,6 @@
 	<%= f.text_field :security_token %>
 </div>
 <div class="actions">
-	<%= f.submit "Save" %>
+	<%= f.submit "Save", class: "pure-button button-blue"%>
 </div>
 <% end %>

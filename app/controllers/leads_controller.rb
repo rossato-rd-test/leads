@@ -29,7 +29,7 @@ class LeadsController < ApplicationController
     respond_to do |format|
       if @lead.save
         sync_contact(@lead)
-        format.html { redirect_to @lead, notice: 'Lead was successfully created.' }
+        format.html { redirect_to leads_url, notice: 'Lead was successfully created.' }
       else
         format.html { render :new }
       end
@@ -42,7 +42,7 @@ class LeadsController < ApplicationController
     respond_to do |format|
       if @lead.update(lead_params)
         sync_contact(@lead)
-        format.html { redirect_to @lead, notice: 'Lead was successfully updated.' }
+        format.html { redirect_to leads_url, notice: 'Lead was successfully updated.' }
       else
         format.html { render :edit }
       end

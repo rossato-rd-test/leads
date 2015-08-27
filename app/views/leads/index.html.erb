@@ -1,39 +1,42 @@
-<p id="notice">
-	<%= notice %>
-</p>
+<center>
+	<p id="notice">
+		<%= notice %>
+	</p>
 
-<h1>Listing Leads</h1>
+	<h1>Listing Leads</h1>
 
-<table id="leads" class="pure-table pure-table-bordered pure-table-striped">
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Email</th>
-			<th>Company</th>
-			<th>Job title</th>
-			<th>Phone</th>
-			<th>Website</th>
-			<th>Salesforce</th>
-			<th colspan="1">Actions</th>
-		</tr>
-	</thead>
+	<table id="leads" class="pure-table pure-table-bordered pure-table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Company</th>
+				<th>Job title</th>
+				<th>Phone</th>
+				<th>Website</th>
+				<th>Salesforce</th>
+				<th colspan="1">Actions</th>
+			</tr>
+		</thead>
 
-	<tbody>
-		<% @leads.each do |lead| %>
-		<tr>
-			<td><%= link_to (lead.name + " " + lead.last_name), edit_lead_path(lead) %></td>
-			<td><%= lead.email %></td>
-			<td><%= lead.company %></td>
-			<td><%= lead.job_title %></td>
-			<td><%= lead.phone %></td>
-			<td><%= lead.website %></td>
-			<td><%= link_to "Link", (@salesforce.instance_url + "/" + lead.salesforce_id), target: "salesforce" %></td>
-			<td><%= link_to 'Delete', lead, class: "button-red pure-button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+		<tbody>
+			<% @leads.each do |lead| %>
+			<tr>
+				<td><%= link_to (lead.name + " " + lead.last_name), edit_lead_path(lead) %></td>
+				<td><%= lead.email %></td>
+				<td><%= lead.company %></td>
+				<td><%= lead.job_title %></td>
+				<td><%= lead.phone %></td>
+				<td><%= lead.website %></td>
+				<td><%= link_to "Link", (@salesforce.instance_url + "/" + lead.salesforce_id), target: "salesforce" %></td>
+				<td><%= link_to 'Delete', lead, class: "button-red pure-button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 
-<br>
+	<br>
 
-<%= link_to 'New Lead', new_lead_path, class: "pure-button-primary pure-button" %>
+	<%= link_to 'New Lead', new_lead_path, class: "pure-button-primary pure-button" %>
+	<%= link_to 'Config', "/", class: "button-light-blue pure-button" %>
+</center>
