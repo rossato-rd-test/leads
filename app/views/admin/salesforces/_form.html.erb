@@ -1,37 +1,44 @@
 <%= form_for(@admin_salesforce) do |f| %>
-  <% if @admin_salesforce.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@admin_salesforce.errors.count, "error") %> prohibited this admin_salesforce from being saved:</h2>
+<% if @admin_salesforce.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@admin_salesforce.errors.count, "error") %> prohibited from being saved:</h2>
 
-      <ul>
-      <% @admin_salesforce.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<ul>
+		<% @admin_salesforce.errors.full_messages.each do |message| %>
+		<li>
+			<%= message %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :client_id %><br>
-    <%= f.text_field :client_id %>
-  </div>
-  <div class="field">
-    <%= f.label :client_secret %><br>
-    <%= f.text_field :client_secret %>
-  </div>
-  <div class="field">
-    <%= f.label :security_token %><br>
-    <%= f.text_field :security_token %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="field">
+	<%= f.label :username %>
+	<br>
+	<%= f.text_field :username %>
+</div>
+<div class="field">
+	<%= f.label :password %>
+	<br>
+	<%= f.text_field :password %>
+</div>
+<div class="field">
+	<%= f.label :client_id %>
+	<br>
+	<%= f.text_field :client_id %>
+</div>
+<div class="field">
+	<%= f.label :client_secret %>
+	<br>
+	<%= f.text_field :client_secret %>
+</div>
+<div class="field">
+	<%= f.label :security_token %>
+	<br>
+	<%= f.text_field :security_token %>
+</div>
+<div class="actions">
+	<%= f.submit "Save" %>
+</div>
 <% end %>
