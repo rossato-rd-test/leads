@@ -27,7 +27,7 @@
 			<td><%= lead.job_title %></td>
 			<td><%= lead.phone %></td>
 			<td><%= lead.website %></td>
-			<td><a href="<%= @salesforce.instance_url + "/" + lead.salesforce_id %>">Link</a></td>
+			<td><%= link_to "Link", (@salesforce.instance_url + "/" + lead.salesforce_id), target: "salesforce" %></td>
 			<td><%= link_to 'Delete', lead, class: "button-red pure-button", method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		</tr>
 		<% end %>
