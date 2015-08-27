@@ -5,7 +5,7 @@ class Admin::SalesforcesController < ApplicationController
     @admin_salesforces = Admin::Salesforce.all
 
     if(@admin_salesforces.count == 0)
-     redirect_to action: "new"
+      redirect_to action: "new"
     else
       redirect_to action: "edit", id: @admin_salesforces[0].id
     end
@@ -14,6 +14,14 @@ class Admin::SalesforcesController < ApplicationController
 
   # GET /admin/salesforces/1
   def show
+    begin
+      @salesforce = Databasedotcom::Client.new(:client_id => @admin_salesforce.client_id, :client_secret => @admin_salesforce.client_secret)
+      @salesforce.authenticate(:username => @admin_salesforce.username, :password => @admin_salesforce.password + @admin_salesforce.security_token)
+      flash[:notice] = "Sucessfully connected to Salesforce account!"
+    rescue Databasedotcom::SalesForceError => e
+      @salesforce = nil
+      flash[:notice] = "Error trying to connect to Salesforce! Message: " + e.message
+    end
   end
 
   # GET /admin/salesforces/new

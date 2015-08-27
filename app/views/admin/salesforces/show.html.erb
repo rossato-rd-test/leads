@@ -1,28 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @admin_salesforce.username %>
+<p id="notice">
+	<%= notice %>
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @admin_salesforce.password %>
+	<strong>Username:</strong>
+	<%= @admin_salesforce.username %>
 </p>
 
 <p>
-  <strong>Client:</strong>
-  <%= @admin_salesforce.client_id %>
+	<strong>Password:</strong>
+	<%= @admin_salesforce.password %>
 </p>
 
 <p>
-  <strong>Client secret:</strong>
-  <%= @admin_salesforce.client_secret %>
+	<strong>Client:</strong>
+	<%= @admin_salesforce.client_id %>
 </p>
 
 <p>
-  <strong>Security token:</strong>
-  <%= @admin_salesforce.security_token %>
+	<strong>Client secret:</strong>
+	<%= @admin_salesforce.client_secret %>
+</p>
+
+<p>
+	<strong>Security token:</strong>
+	<%= @admin_salesforce.security_token %>
 </p>
 
 <%= link_to 'Edit', edit_admin_salesforce_path(@admin_salesforce) %> |
